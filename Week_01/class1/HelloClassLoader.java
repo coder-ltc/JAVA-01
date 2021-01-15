@@ -1,12 +1,3 @@
-作业：
-
-## class1：
-
-2、自定义一个 Classloader，加载一个 Hello.xlass 文件，执行 hello 方法， 
-
-此文件内容是一个 Hello.class 文件所有字节（x=255-x）处理后的文件。文件群里提供。
-
-```
 import javax.annotation.Resources;
 import java.io.*;
 import java.lang.reflect.Method;
@@ -27,6 +18,7 @@ public class HelloClassLoader extends ClassLoader {
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
 
+//        URL resource = this.getClass().getClassLoader().getResource("");
         File file = new File("./" + name + ".xlass");
         byte[] bytes = fileToBytes(file);
         for (int i = 0; i < bytes.length; i++){
@@ -69,22 +61,3 @@ public class HelloClassLoader extends ClassLoader {
         return bytes;
     }
 }
-
-```
-
-3、画一张图，展示 Xmx、Xms、Xmn、Metaspache、DirectMemory、Xss
-
-这些内存参数的关系。
-
-![](class1\jvm.png)
-
-## class2：
-
-1、本机使用 G1 GC 启动一个程序，仿照课上案例分析一下 JVM 情况 
-
-可以使用gateway-server-0.0.1-SNAPSHOT.jar 
-
-注意关闭自适应参数：-XX:-UseAdaptiveSizePolicy 
-
-![](class2\jstat.png)
-
