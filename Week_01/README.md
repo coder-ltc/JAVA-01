@@ -76,7 +76,7 @@ public class HelloClassLoader extends ClassLoader {
 
 这些内存参数的关系。
 
-![](class1\jvm.png)
+![relation](./class1/jvm.png)
 
 ## class2：
 
@@ -86,5 +86,5 @@ public class HelloClassLoader extends ClassLoader {
 
 注意关闭自适应参数：-XX:-UseAdaptiveSizePolicy 
 
-![](class2\jstat.png)
+![relation](./class2/jstat.png)
 
